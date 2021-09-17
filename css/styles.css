@@ -1051,10 +1051,12 @@ img {
 }
 
 #w-node-_0052b298-dee8-2f31-90c5-70c177a906e7-6436908b {
+  grid-row: span 1;
   -ms-grid-row: span 1;
   grid-row-start: span 1;
   -ms-grid-row-span: 1;
   grid-row-end: span 1;
+  grid-column: span 1;
   -ms-grid-column: span 1;
   grid-column-start: span 1;
   -ms-grid-column-span: 1;
