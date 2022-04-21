@@ -1,0 +1,165 @@
+/* font-family: Hellix, installed */
+
+/*Global Styling*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    font-family: 'Hellix', sans-serif;
+    color: #fff;
+    background-color: #292929;
+}
+
+.limit {
+    max-width: 425px;
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h6 {
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 75px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 36px;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+h6 {
+    font-size: 18px;
+    margin: 0 0 40px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+
+/* Header Styling */
+
+.header-bar {
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    height: 75px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Main Content Container Styles*/
+
+.center-text {
+    text-align: center;
+}
+
+.copy-panel {
+    padding: 0 15px;
+}
+
+
+/* Call-to-Action Button Styles */
+
+.cta {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    width: 252px;
+    margin: 50px auto;
+    padding: 15px 0;
+    border-radius: 35px;
+}
+
+.cta-primary {
+    color: #292929;
+    background-color: #fff;
+}
+
+
+/* Footer Styles*/
+
+#copyright {
+    margin: 60px 0;
+    text-align: center;
+}
+
+/* Desktop View 
+Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    /* Desktop Main Content Styles Changes */
+    .limit {
+        max-width: 1500px;
+    }
+
+    .outer-container {
+        margin: 0 10%;
+    }
+
+    /* Desktop Header Styles */
+    .header-bar {
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Desktop Hero Section */
+    .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero-text {
+        width: 50%;
+        text-align: left;
+    }
+
+
+    /* Desktop Call-to-Action Styles */
+    .cta {
+        margin: 35px 0;
+    }
+
+    /* Desktop Footer Styles Changes */
+
+    footer.copy-panel {
+        display: flex;
+        padding: 40px 0 0;
+    }
+
+    #copyright {
+        text-align: left;
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
