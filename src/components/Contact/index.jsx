@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Loader from 'react-loaders';
-import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
@@ -38,7 +37,7 @@ const Contact = () => {
           </h1>
           <p>
             I am interested in freelance opportunities - especially ambitious or large projects. However, if you have other request or
-            question, don't hesitate to contact me using below form either.
+            question, do not hesitate to contact me using below form either.
           </p>
           <div className='contact-form'>
             <form ref={form} onSubmit={sendEmail}>
