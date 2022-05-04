@@ -691,6 +691,7 @@
         // // Portfolio Item template
         // {
         //   id: X, // insert unique id here as int
+        //   url: 'single-portfolio.html?id=X', // update id to match
         //   imgUrl: '', // insert CDN https to serve thumbnail img
         //   title: {
         //     en:'' //project title
@@ -853,6 +854,7 @@
           },
           {
             id: 4,
+            url: 'single-portfolio.html?id=4',
             imgUrl: 'https://i.ibb.co/ts7Ckjw/landing-Pagev2-Desktop.png',
             title: {
               en: 'Refactored Coming Soon Page to better showcase product'
@@ -882,6 +884,7 @@
           },
           {
             id: 5,
+            url: 'single-portfolio.html?id=5',
             imgUrl: 'https://i.ibb.co/M794L5F/sass-Dashboard-Desktop1.png',
             title: {
               en: 'SAAS Dashboard in React'
