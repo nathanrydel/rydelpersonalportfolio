@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nafie develops the best quality website that serves for the long-term. Well-documented, clean, easy and elegant interface helps any non-technical clients.">
-    <meta name="keywords" content="portfolio, agency, business, clean, company, corporate, creative, gallery, rtl, modern, photography, vue, vuejs, responsive, sass">
-
+    <meta content="Nathan Rydel is a Front-End and eCommerce Developer based out of Phoenix, Arizona" name="description">
+    <meta content="Nathan Rydel | Front End and eCommerce Developer" property="og:title">
+    <meta content="Nathan Rydel is a Front-End and eCommerce Developer based out of Phoenix, Arizona"
+        property="og:description">
+    <meta content=" Nathan Rydel | Front End and eCommerce Developer" property="twitter:title">
+    <meta content="Nathan Rydel is a Front-End and eCommerce Developer based out of Phoenix, Arizona"
+        property="twitter:description">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
     <!-- title of the browser tab -->
-    <title>Nafie - HTML Portfolio Template</title>
+    <title>Nathan Rydel | Developer</title>
 
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.ico">
@@ -68,13 +76,13 @@
             <nav :class="{'menu-open': isNavMenuOpen}" ref="headerNav">
 
               <!-- nav menu links -->
-              <ul class="nav-links">
+              <!-- <ul class="nav-links">
                 <li v-for="link in navLinks" :key="link.url">
                   <a :href="link.url" @click="closeNavMenu">
                     {{ link.title.en }}
                   </a>
                 </li>
-              </ul>
+              </ul> -->
 
               <!-- menu content in big devices (hidden in mobile/tablet) -->
               <div class="desktop-menu-content" tabindex="-1">
@@ -86,7 +94,8 @@
                       I love making things simple, intuitive and expertly crafted!
                     </p>
                     <h4 class="block-title">
-                      Product is the vital essence of what i do, truly great product is born of meticulous planning and process. This is where i specialized!
+                      I specialize in crafting your vision into a Product that is ready to launch! Maintaining your vision throughout the
+                      planning and design process is where we will build the essence of your brand.
                     </h4>
                   </div>
 
@@ -95,25 +104,15 @@
                     <li class="col-lg-4">
                       <h4 class="block-title">Email</h4>
                       <ul>
-                        <li><a href="mailto:info@nafie.com">info@nafie.com</a></li>
-                        <li><a href="mailto:support@nafie.com">support@nafie.com</a></li>
+                        <li><a href="mailto:contact@nathanrydel.dev">contact@nathanrydel.dev</a></li>
                       </ul>
                     </li>
                     <li class="col-lg-4">
-                      <h4 class="block-title">Address</h4>
+                      <h4 class="block-title">Location</h4>
                       <ul>
                         <li>
-                          941 saqrqorish Road, alandalos,
-                          <br>
-                          grnata, wa 47122-4194
+                          Phoenix, AZ
                         </li>
-                      </ul>
-                    </li>
-                    <li class="col-lg-4">
-                      <h4 class="block-title">Phone</h4>
-                      <ul>
-                        <li><a href="tel:02966202290">(02) 966 202 290</a></li>
-                        <li><a href="tel:02966202291">(02) 966 202 291</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -145,22 +144,51 @@
         </header>
         <!-- end of header -->
 
-        <!-- start of 404 page -->
-        <div class="not-found-page page">
-          <div class="not-found-content">
-            <div class="container">
-              <div class="not-found-img">
-                <img src="assets/images/404.png" alt="404">
-              </div>
-              <div class="not-found-text">
-                <h2 class="title">Oops! That page can’t be found</h2>
-                <p class="desc">We're sorry, we couldn't find the page you requested.</p>
-              </div>
-              <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <!-- start of portfolio page -->
+        <div class="portfolio-page portfolio-section section page">
+          <div class="container">
+            <div class="section-content">
+
+              <!-- portfolio items -->
+              <ul class="portfolio-items has-works" ref="portfolioItems">
+                <li>
+                  <!-- text box -->
+                  <div class="text-box-block">
+                    <span class="subtitle">
+                      <a :href="'archive-portfolio.html?tax=cat&cat=' + getSinglePortfolioItem.category">{{ getSinglePortfolioItem.category }}</a>
+                    </span>
+                    <h2>{{ getSinglePortfolioItem.title.en }}</h2>
+                    <p>{{ getSinglePortfolioItem.desc.en }}</p>
+                    <ul class="work-tools">
+                      <li v-for="tool in getSinglePortfolioItem.tools" :key="tool">
+                        <a :href="'archive-portfolio.html?tax=tools&tools=' + tool">{{ tool }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <!-- start items list -->
+                <li class="portfolio-item"
+                  v-for="screenshot in getSinglePortfolioItem.screenshots"
+                  :key="screenshot.caption.en">
+                  <!-- href points to the fully sized image -->
+                  <a class="glightbox" target="_blank" rel="noopener" data-gallery="gallery1"
+                    :href="screenshot.url"
+                    :data-glightbox="'title:' + screenshot.caption.en">
+                    <div class="item-img">
+                      <!-- thumbnails -->
+                      <img :src="screenshot.url" :alt="screenshot.caption.en">
+                    </div>
+                    <div class="item-details">
+                      <h3 class="title">{{ screenshot.caption.en }}</h3>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <!-- end of 404 page -->
+        <!-- end of portfolio page -->
 
         <!-- start of footer -->
         <footer>
@@ -173,8 +201,8 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                &copy; {{ copyrightDate }} All Rights by
-                <a href="https://github.com/nathanrydel/" target="_blank" rel="noopener">Nathan Rydel</a>
+                &copy; {{ copyrightDate }} All rights reserved by
+                <a href="https://github.com/nathanrydel" target="_blank" rel="noopener">Nathan Rydel</a>
               </div>
             </div>
           </div>
